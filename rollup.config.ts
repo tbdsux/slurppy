@@ -42,7 +42,11 @@ export default {
     url(),
     resolve(),
     commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript({
+      useTsconfigDeclarationDir: true,
+      rollupCommonJSResolveHack: false,
+      clean: true
+    }),
     analyze(),
     sourceMaps()
   ],

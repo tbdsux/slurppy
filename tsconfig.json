@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
+    "lib": ["dom", "esnext"],
     "strict": true,
     "strictNullChecks": true,
     "declaration": true,
+    "declarationDir": "dist/typings",
     "module": "esnext",
-    "target": "es5",
+    "target": "es6",
     "jsx": "react",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
