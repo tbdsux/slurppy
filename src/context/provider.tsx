@@ -15,7 +15,7 @@ interface SlurpProviderProps<T extends BaseDBMap> {
   initialData?: T
   autoWrite?: boolean // auto write on each update
   autoRead?: boolean // auto read from db
-  key?: string // localstorage name
+  keyname?: string // localstorage name
 }
 
 interface SlurpContextProps<T extends BaseDBMap> {
@@ -39,9 +39,9 @@ const SlurpProvider = <T extends BaseDBMap>({
   initialData,
   autoWrite = false,
   autoRead = false,
-  key = 'slurpdb'
+  keyname = 'slurpdb'
 }: SlurpProviderProps<T>) => {
-  const db = new LocalStorage<T>(key, autoRead, initialData)
+  const db = new LocalStorage<T>(keyname, autoRead, initialData)
 
   const [state, dispatch] = useReducer(SlurpReducer, db.data)
   const [updated, setUpdated] = useState(false)
