@@ -1,6 +1,6 @@
 {
   "name": "slurppy",
-  "version": "0.0.1",
+  "version": "0.0.1-b1",
   "description": "Simple reactive array db for react.",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
