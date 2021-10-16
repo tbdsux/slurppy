@@ -1,13 +1,17 @@
 import logo from './logo.svg'
 import './App.css'
-import { useDispatcher, useSlurp } from 'slurp'
+import { useDispatcher, useSlurp } from 'slurppy'
+
+type SampleType = {
+  hello: string | number
+}
 
 function App() {
-  const { state, updated } = useSlurp()
+  const { state, updated } = useSlurp<SampleType[]>()
   const { insert, reset } = useDispatcher()
 
   const addItem = () => {
-    insert({ new: 'another' })
+    insert({ hello: 'another' })
   }
   return (
     <div className="App">

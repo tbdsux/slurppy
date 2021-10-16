@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
+import { SlurpProvider } from 'slurppy'
 import App from './App'
+import './index.css'
 import reportWebVitals from './reportWebVitals'
-import { SlurpProvider } from 'slurp'
 
 ReactDOM.render(
   <React.StrictMode>
