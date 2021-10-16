@@ -1,3 +1,3 @@
-type BaseDBMap = []
+type BaseDBMap = unknown[]
 
 export type { BaseDBMap }

@@ -44,7 +44,7 @@ const SlurpReducer = <T extends BaseDBMap>(
     }
 
     case 'reset': {
-      return [] as T
+      return [] as unknown as T
     }
     default:
       return state
