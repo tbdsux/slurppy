@@ -2,9 +2,13 @@ import { BaseDBMap } from '../typings/db'
 
 class LocalStorage<T extends BaseDBMap> {
   key: string
-  data: T | BaseDBMap
+  data: T
 
-  constructor(key: string, autoRead: boolean, initialData: T | undefined) {
+  constructor(
+    key: string,
+    autoRead: boolean,
+    initialData: T = [] as BaseDBMap as T
+  ) {
     this.key = key
 
     this.data = initialData ?? []

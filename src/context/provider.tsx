@@ -43,11 +43,13 @@ const SlurpProvider = <T extends BaseDBMap>({
 }: SlurpProviderProps<T>) => {
   const db = new LocalStorage<T>(keyname, autoRead, initialData)
 
-  const [state, dispatch] = useReducer(SlurpReducer, db.data)
+  const [state, dispatch] = useReducer<
+    (state: T, action: SlurpReducerActionsProps<T>) => T
+  >(SlurpReducer, db.data)
   const [updated, setUpdated] = useState(false)
 
   // wrapper for dispatching functions
-  const dispatcher = <T extends BaseDBMap>(v: SlurpReducerActionsProps<T>) => {
+  const dispatcher = (v: SlurpReducerActionsProps<T>) => {
     const func = dispatch(v)
 
     setUpdated(true)
