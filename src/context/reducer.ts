@@ -1,9 +1,9 @@
 import { BaseDBMap } from '../typings/db'
 
 type SlurpReducerActionsProps<T extends BaseDBMap> =
-  | { type: 'update'; index: number; data: T }
+  | { type: 'update'; index: number; data: unknown }
   | { type: 'remove'; index: number }
-  | { type: 'insert'; data: T }
+  | { type: 'insert'; data: unknown }
   | { type: 'action'; func: (state: T) => T }
   | { type: 'set'; data: T }
   | { type: 'reset' }
