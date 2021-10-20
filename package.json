@@ -1,6 +1,6 @@
 {
   "name": "slurppy",
-  "version": "0.0.1-b1",
+  "version": "0.0.1-b2",
   "description": "Simple reactive array db for react.",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
@@ -12,6 +12,8 @@
     "lint:fix": "eslint --fix .",
     "huskyinstall": "husky install",
     "precommit": "lint-staged",
+    "pack": "npm run build && npm pack",
+    "prepublishOnly": "npm run build",
     "build": "cross-env NODE_ENV=production && rm -rf dist && rollup -c"
   },
   "keywords": [],
